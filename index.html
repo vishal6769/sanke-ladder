@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snakes & Ladders Game & Visualizer</title>
+    <!-- Imports the global stylesheet framework indexing separate components -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main application shell wrapper -->
+    <div class="game-wrapper">
+        
+        <!-- Dashboard panel positioned securely along the top margin -->
+        <header class="controls">
+            <div class="setting-group">
+                <label for="gridSize">Grid Size: </label>
+                <input type="number" id="gridSize" min="4" max="20" value="10">
+                <button id="generateBtn">🔄 New Board</button>
+            </div>
+            
+            <div class="movement-group">
+                <div class="game-actions-row">
+                    <button id="update-btn">🎨 Custom Override</button>
+                    <button id="undo-btn">↩️ Undo</button>
+                    <button id="reset-btn">🔄 Reset</button>
+                </div>
+                <div id="gameStatus">
+                    Turn: <span id="activePlayerName" style="color:#eccc68; font-weight: bold;">Yellow Player</span> 
+                    (<span id="diceResult">Tap Dice To Roll</span>)
+                </div>
+            </div>
+        </header>
+
+        <!-- FLOATING INTERACTIVE COMPONENT: Shifted cleanly to the middle right margin -->
+        <div class="dice-container">
+            <div class="dice" id="diceBlock" style="transform: rotateX(20deg) rotateY(20deg);">
+                <div class="face face-1"><span class="dot c-4"></span></div>
+                <div class="face face-6">
+                    <span class="dot c-1"></span><span class="dot c-2"></span><span class="dot c-3"></span>
+                    <span class="dot c-5"></span><span class="dot c-6"></span><span class="dot c-7"></span>
+                </div>
+                <div class="face face-2"><span class="dot c-1"></span><span class="dot c-7"></span></div>
+                <div class="face face-5">
+                    <span class="dot c-1"></span><span class="dot c-2"></span><span class="dot c-4"></span>
+                    <span class="dot c-6"></span><span class="dot c-7"></span>
+                </div>
+                <div class="face face-3"><span class="dot c-1"></span><span class="dot c-4"></span><span class="dot c-7"></span></div>
+                <div class="face face-4"><span class="dot c-1"></span><span class="dot c-2"></span><span class="dot c-6"></span><span class="dot c-7"></span></div>
+            </div>
+        </div>
+
+        <!-- Central board viewport tracking grid elements and game canvases -->
+        <main class="grid-viewport">
+            <div class="board-container">
+                <div id="board-grid"></div>
+                <canvas id="game-canvas" width="500" height="500"></canvas>
+            </div>
+        </main>
+
+        <!-- Live text notification system error log container -->
+        <div id="error" class="error-msg"></div>
+
+    </div>
+
+    <!-- Master orchestrator hub entry script -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

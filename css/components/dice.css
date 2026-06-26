@@ -1,0 +1,43 @@
+/* Inside css/components/dice.css */
+
+.dice-container {
+    perspective: 1000px;
+    position: absolute;      /* Detaches the element from standard flex/grid flows */
+    
+    /* VERTICAL MIDDLE ALIGNMENT MATH FORMULA */
+    top: 50%;                
+    transform: translateY(-50%); 
+    
+    right: 30px;             /* Clear horizontal spacing gap from the right edge */
+    z-index: 1000;           /* Locks layout rendering priorities above board canvases */
+    margin: 0;
+    width: 66px;
+    height: 66px;
+}
+
+.dice {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    cursor: pointer;
+}
+
+/* Internal dice dimensions, parameters, face nodes, and structures remain steady */
+.face {
+    position: absolute; width: 66px; height: 66px; left: -3px; top: -3px;
+    background: #ffffff; border-radius: 10px; box-sizing: border-box; display: grid;
+    grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr);
+    padding: 10px; border: 1px solid #e2e8f0; backface-visibility: hidden;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+.face-1 { transform: translateZ(33px); background: #ffffff; }
+.face-6 { transform: rotateY(180deg) translateZ(33px); background: #f7fafc; }
+.face-2 { transform: rotateY(90deg) translateZ(33px); background: #edf2f7; }
+.face-5 { transform: rotateY(-90deg) translateZ(33px); background: #f7fafc; }
+.face-3 { transform: rotateX(90deg) translateZ(33px); background: #edf2f7; }
+.face-4 { transform: rotateX(-90deg) translateZ(33px); background: #e2e8f0; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #000000; align-self: center; justify-self: center; }
+.c-1 { grid-area: 1 / 1; } .c-2 { grid-area: 1 / 3; } .c-3 { grid-area: 2 / 1; }
+.c-4 { grid-area: 2 / 2; } .c-5 { grid-area: 2 / 3; } .c-6 { grid-area: 3 / 1; } .c-7 { grid-area: 3 / 3; }

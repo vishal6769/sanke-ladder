@@ -1,0 +1,59 @@
+.board-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#board-grid {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    color: #a0aec0;
+    border: 1px solid #444;
+    box-sizing: border-box;
+    transition: background-color 0.2s, color 0.2s;
+    user-select: none;
+}
+
+.cell-even { background-color: #2c3e50; color: #bdc3c7; }
+.cell-odd { background-color: #34495e; color: #ecf0f1; }
+
+/* Dynamic builder state modifier tags */
+.cell.valid-target {
+    background-color: #2980b9 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+}
+
+.cell.invalid-target {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.cell.selected-start {
+    background-color: #e67e22 !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}

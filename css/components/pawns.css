@@ -1,0 +1,15 @@
+.pawn {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.pawn-0 { background-color: #eccc68; transform: translate(-10px, -10px); }
+.pawn-1 { background-color: #ff4757; transform: translate(10px, -10px); }
+.pawn-2 { background-color: #2ed573; transform: translate(-10px, 10px); }
+.pawn-3 { background-color: #1e90ff; transform: translate(10px, 10px); }

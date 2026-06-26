@@ -1,0 +1,88 @@
+.controls-container {
+    background-color: #2d2d2d;
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    width: fit-content;
+}
+
+.inputs-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input {
+    width: 50px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.game-actions-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#update-btn { background-color: #34495e; border: 1px solid #555; }
+#update-btn:hover { background-color: #415b76; }
+#undo-btn { background-color: #ffa502; }
+#undo-btn:hover { background-color: #ffb142; }
+#reset-btn { background-color: #747d8c; }
+#reset-btn:hover { background-color: #a4b0be; }
+
+button.placing-active {
+    background-color: #e67e22 !important;
+    animation: controlPulse 1.5s infinite;
+}
+
+@keyframes controlPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 20px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#gameStatus {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #111;
+    padding: 6px 16px;
+    border-radius: 4px;
+}
